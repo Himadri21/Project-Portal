@@ -1,0 +1,82 @@
+﻿@model ProjectProgress.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.DepartmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mark.StudentUSN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mark.StudentUSN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.ProjectTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.ProjectTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher.TeacherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher.TeacherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentPhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentPhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentEmailId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentEmailId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentUSN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ProjectProgress.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h3>Index</h3>
+
+
+<table class="table table-hover">
+    <tr class="table-active">
+        <th>
+            Student USN
+        </th>
+        <th>
+            Student Name
+        </th>
+        <th>
+            PhoneNumber
+        </th>
+        <th>
+            Semester
+        </th>
+        <th>
+            Email Id
+        </th>
+        <th>
+            Department
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentUSN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentEmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StudentUSN }) 
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.StudentUSN }) 
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.StudentUSN })
+        </td>
+    </tr>
+}
+
+</table>

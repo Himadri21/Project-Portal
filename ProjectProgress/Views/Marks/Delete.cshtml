@@ -1,0 +1,64 @@
+﻿@model ProjectProgress.Models.Mark
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Mark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phase1Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phase1Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phase2Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phase2Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phase3Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phase3Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMarks)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

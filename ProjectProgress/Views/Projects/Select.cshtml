@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ProjectProgress.Models.Student>
+
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>Select Students</h2>
+
+@foreach(var item in Model)
+{
+    <tr>
+        <td>
+            @Html.HiddenFor(modelItem => item.StudentUSN)
+        </td>
+        <td>
+            <div class="form-group">
+                @Html.LabelFor(modelItem => item.StudentUSN, "StudentUSN", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => item.StudentUSN, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => item.StudentUSN, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                @Html.LabelFor(modelItem => item.ProjectID, "ProjectID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => item.ProjectID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => item.ProjectID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                @Html.LabelFor(modelItem => item.TeacherID, "TeacherID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(modelItem => item.TeacherID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(modelItem => item.TeacherID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </td>
+    </tr>
+}

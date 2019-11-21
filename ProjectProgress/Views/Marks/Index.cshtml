@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ProjectProgress.Models.Mark>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phase1Marks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phase2Marks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phase3Marks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.StudentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phase1Marks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phase2Marks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phase3Marks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalMarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentUSN }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentUSN }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentUSN })
+        </td>
+    </tr>
+}
+
+</table>

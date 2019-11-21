@@ -1,0 +1,58 @@
+﻿@model ProjectProgress.Models.Mark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phase1Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phase1Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phase2Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phase2Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phase3Marks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phase3Marks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMarks)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentUSN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

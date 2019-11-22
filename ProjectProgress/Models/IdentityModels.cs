@@ -20,6 +20,8 @@ namespace ProjectProgress.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        
+
         public ApplicationDbContext()
             : base("PPModel", throwIfV1Schema: false)
         {

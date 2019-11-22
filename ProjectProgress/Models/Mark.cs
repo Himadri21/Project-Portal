@@ -19,7 +19,7 @@ namespace ProjectProgress.Models
         public int? Phase3Marks { get; set; }
 
         public int? TotalMarks { get; set; }
-
+        
         public virtual Student Student { get; set; }
     }
 }

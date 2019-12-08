@@ -185,6 +185,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912071301496_initial.cs" />
+    <Compile Include="Migrations\201912071301496_initial.Designer.cs">
+      <DependentUpon>201912071301496_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912071311072_email.cs" />
+    <Compile Include="Migrations\201912071311072_email.Designer.cs">
+      <DependentUpon>201912071311072_email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201912071313002_ne.cs" />
+    <Compile Include="Migrations\201912071313002_ne.Designer.cs">
+      <DependentUpon>201912071313002_ne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -199,11 +212,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-lux.css" />
+    <Content Include="Content\bootstrap-lux1.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PPMS.jpg" />
+    <Content Include="Content\PPMS1.jpg" />
+    <Content Include="Content\PPMS2.jpg" />
+    <Content Include="Content\PPMS3.jpg" />
     <Content Include="Content\RNSIT.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -222,7 +239,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -286,6 +305,8 @@
     <Content Include="Views\Students\SelectIndex.cshtml" />
     <Content Include="Views\TeacherView\Index.cshtml" />
     <Content Include="Views\Projects\Select.cshtml" />
+    <Content Include="Views\Teachers\First.cshtml" />
+    <Content Include="Views\Teachers\EnterID.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -302,6 +323,17 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201912071301496_initial.resx">
+      <DependentUpon>201912071301496_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912071311072_email.resx">
+      <DependentUpon>201912071311072_email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912071313002_ne.resx">
+      <DependentUpon>201912071313002_ne.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

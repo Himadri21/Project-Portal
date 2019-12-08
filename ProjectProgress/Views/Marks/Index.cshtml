@@ -27,29 +27,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.StudentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phase1Marks)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phase2Marks)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phase3Marks)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalMarks)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StudentUSN }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentUSN }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StudentUSN })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phase1Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phase2Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phase3Marks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalMarks)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentUSN }) |
+                @Html.ActionLink("Details", "Details", new { id = item.StudentUSN }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentUSN })
+            </td>
+        </tr>
+    }
+    <p>
+        @Html.ActionLink("Back to Home", "Index", "TeacherView")
+    </p>
 </table>

@@ -26,6 +26,10 @@ namespace ProjectProgress.Models
         [StringLength(255)]
         public string TeacherDomain { get; set; }
 
+        [EmailAddress]
+        [StringLength(255)]
+        public string TeacherEmail{ get; set; }
+
         [StringLength(50)]
         public string TeacherPassword { get; set; }
 

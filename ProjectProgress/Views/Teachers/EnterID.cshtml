@@ -1,0 +1,14 @@
+﻿@model ProjectProgress.Models.Teacher
+
+@{
+    ViewBag.Title = "EnterID";
+}
+
+<h2>EnterID</h2>
+
+@using (Html.BeginForm("Details", "Students", FormMethod.Post))
+{
+    <input type="text" name="TeacherID" id="TeacherID" />
+
+    <input type="submit" value="Next" />
+}

@@ -10,6 +10,7 @@ using ProjectProgress.Models;
 
 namespace ProjectProgress.Controllers
 {
+    
     public class StudentsController : Controller
     {
         private ProjectProgressModel db = new ProjectProgressModel();
@@ -27,18 +28,19 @@ namespace ProjectProgress.Controllers
             return View(students.ToList());
         }
         // GET: Students/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details()
         {
+            var id = User.Identity.Name;
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Student student = db.Students.Find(id);
-            if (student == null)
+            List<Student> students = db.Students.Where(s => s.Teacher.TeacherName == id).ToList() ;
+            if(students.Count()==0)
             {
-                return HttpNotFound();
+                return RedirectToAction("Create", "Students");
             }
-            return View(student);
+            return View(students);
         }
 
         // GET: Students/Select/5
@@ -85,8 +87,6 @@ namespace ProjectProgress.Controllers
         {
             ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName");
             ViewBag.StudentUSN = new SelectList(db.Marks, "StudentUSN", "StudentUSN");
-            //ViewBag.ProjectID = new SelectList(db.Projects, "ProjectID", "ProjectTitle");
-            //ViewBag.TeacherID = new SelectList(db.Teachers, "TeacherID", "TeacherName");
             return View();
         }
 
@@ -103,11 +103,8 @@ namespace ProjectProgress.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.DepartmentID = new SelectList(db.Departments, "DepartmentID", "DepartmentName", student.DepartmentID);
             ViewBag.StudentUSN = new SelectList(db.Marks, "StudentUSN", "StudentUSN", student.StudentUSN);
-            //ViewBag.ProjectID = new SelectList(db.Projects, "ProjectID", "ProjectTitle", student.ProjectID);
-            //ViewBag.TeacherID = new SelectList(db.Teachers, "TeacherID", "TeacherName", student.TeacherID);
             return View(student);
         }
 

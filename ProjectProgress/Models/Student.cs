@@ -5,7 +5,7 @@ namespace ProjectProgress.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    using System.Data.SqlClient;
     [Table("Student")]
     public partial class Student
     {

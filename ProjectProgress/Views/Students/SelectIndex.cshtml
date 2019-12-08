@@ -31,28 +31,31 @@
 
     @foreach (var item in Model)
     {
-    <tr>
+        <tr>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentUSN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Project.ProjectTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Teacher.TeacherName)
-        </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentUSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.ProjectTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teacher.TeacherName)
+            </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-        </td>
-        <td>
-            @Html.ActionLink("Select", "Select", new { id = item.StudentUSN })
-        </td>
-    </tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "Select", new { id = item.StudentUSN })
+            </td>
+        </tr>
     }
 
 </table>
+<p>
+    @Html.ActionLink("Done", "Index", "Admin")
+</p>

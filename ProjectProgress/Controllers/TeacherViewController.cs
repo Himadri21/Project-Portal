@@ -8,6 +8,7 @@ namespace ProjectProgress.Controllers
 {
     public class TeacherViewController : Controller
     {
+        
         // GET: TeacherView
         public ActionResult Index()
         {

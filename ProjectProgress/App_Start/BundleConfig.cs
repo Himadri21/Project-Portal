@@ -23,7 +23,7 @@ namespace ProjectProgress
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-lux.css",
+                      "~/Content/bootstrap-lux1.css",
                       "~/Content/site.css"));
         }
     }

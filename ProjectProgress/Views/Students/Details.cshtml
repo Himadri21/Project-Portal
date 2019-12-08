@@ -1,4 +1,4 @@
-﻿@model ProjectProgress.Models.Student
+﻿@model IEnumerable<ProjectProgress.Models.Student>
 
 @{
     ViewBag.Title = "Details";
@@ -6,77 +6,64 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Student</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Department.DepartmentName)
-        </dt>
+<table class="table table-hover">
+    <tr class="table-active">
+        <th>
+            Student USN
+        </th>
+        <th>
+            Student Name
+        </th>
+        <th>
+            PhoneNumber
+        </th>
+        <th>
+            Semester
+        </th>
+        <th>
+            Email Id
+        </th>
+        <th>
+            Department
+        </th>
+        <!--<th></th>
+        <th></th>
+        <th></th>-->
+    </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Department.DepartmentName)
-        </dd>
+    @foreach (var item in Model)
+    {
+        <tr>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Mark.StudentUSN)
-        </dt>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentUSN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentEmailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+            </td>
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentUSN })
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentUSN })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentUSN })
+                </td>*@
 
-        <dd>
-            @Html.DisplayFor(model => model.Mark.StudentUSN)
-        </dd>
+        </tr>
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Project.ProjectTitle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Project.ProjectTitle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Teacher.TeacherName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Teacher.TeacherName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentPhoneNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentPhoneNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Semester)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Semester)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentEmailId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentEmailId)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentUSN }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</table>

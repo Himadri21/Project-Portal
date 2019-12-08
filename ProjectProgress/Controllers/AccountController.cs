@@ -83,7 +83,7 @@ namespace ProjectProgress.Controllers
             {
                 case SignInStatus.Success:
                    
-                    if(User.IsInRole("Admin"))
+                    if(User.IsInRole("Admin") || model.UserName=="admin@rnsit.com")
                     {
                         return RedirectToAction("Index", "Admin");
                     }

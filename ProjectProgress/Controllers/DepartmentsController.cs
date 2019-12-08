@@ -10,6 +10,7 @@ using ProjectProgress.Models;
 
 namespace ProjectProgress.Controllers
 {
+    
     public class DepartmentsController : Controller
     {
         private ProjectProgressModel db = new ProjectProgressModel();

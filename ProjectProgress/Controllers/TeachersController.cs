@@ -20,7 +20,17 @@ namespace ProjectProgress.Controllers
             var teachers = db.Teachers.Include(t => t.Department);
             return View(teachers.ToList());
         }
+        // GET: Teacher/First
+        public ActionResult First()
+        {
+            return View();
+        }
 
+        [HttpGet]
+        public ActionResult EnterID()
+        {
+            return View();
+        }
         // GET: Teachers/Details/5
         public ActionResult Details(int? id)
         {
@@ -48,7 +58,7 @@ namespace ProjectProgress.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TeacherID,TeacherName,TeacherDomain,TeacherPassword,DepartmentID")] Teacher teacher)
+        public ActionResult Create([Bind(Include = "TeacherID,TeacherName,TeacherDomain,TeacherPassword,DepartmentID,TeacherEmail")] Teacher teacher)
         {
             if (ModelState.IsValid)
             {

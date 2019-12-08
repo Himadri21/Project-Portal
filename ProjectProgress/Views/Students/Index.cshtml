@@ -27,9 +27,9 @@
         <th>
             Department
         </th>
+        <!--<th></th>
         <th></th>
-        <th></th>
-        <th></th>
+        <th></th>-->
     </tr>
 
 @foreach (var item in Model) {
@@ -53,15 +53,16 @@
         <td>
             @Html.DisplayFor(modelItem => item.Department.DepartmentName)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.StudentUSN }) 
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StudentUSN })
         </td>
         <td>
-            @Html.ActionLink("Details", "Details", new { id = item.StudentUSN }) 
+            @Html.ActionLink("Details", "Details", new { id = item.StudentUSN })
         </td>
         <td>
             @Html.ActionLink("Delete", "Delete", new { id = item.StudentUSN })
-        </td>
+        </td>*@
+        
     </tr>
 }
 

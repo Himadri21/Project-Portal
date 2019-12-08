@@ -1,28 +1,64 @@
 ﻿@{
     ViewBag.Title = "Home Page";
-}
+} 
+<style>
+    body, html {
+        height: 100%;
+        width : 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-<div class="jumbotron">
-    <h2>Project Progress Management System</h2>
-    <p class="lead">This application helps teachers to monitor the different phases of students’ project, award marks at each phase and view their reports</p>
-    <p><a href="~/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    <!--<p class="btn btn-primary btn-lg">
-            @Html.ActionLink("Learn more", "About")
-    </p>-->
-</div>
+    * {
+        box-sizing: border-box;
+    }
 
-<div class="row">
-    <div class="col-md-5">
-        <h2>Admin Login</h2>
-        <p>Login for Admin of every department using their IDs.</p>
-        <p><a class="btn btn-primary " href="~/Admin/Index">Admin Entry &raquo;</a></p>
-    </div>
-    <div class="col-md-5">
-        <h2>Teacher Login</h2>
-        <p>
-            Login for Teachers of every department using their IDs.
-        </p>
-        <p><a class="btn btn-primary" href="~/TeacherView/Index">Teacher Entry &raquo;</a></p>
-    </div>
+    .bg-image {
+        /* The image used */
+        background-image: url("../../Content/PPMS3.jpg");
+        /* Add the blur effect */
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+        /* Full height */
+        height: 100%;
+        
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
 
-</div>
+    /* Position text in the middle of the page/image */
+    .bg-text {
+        background-color: #343a40; /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        //font-weight: bold;
+        //border: 3px solid #f1f1f1;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 70%;
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+    <center>
+        <div class="bg-image"></div>
+            <div class=" bg-text">
+                <h2 style="color:white">Project Progress Management System</h2>
+                <p style="font-size:15px">
+                    This application helps teachers to monitor
+                    the different phases of students’ project,
+                    award marks at each phase and view their reports</p>
+                <p><a href="~/Account/Login" class="btn btn-secondary">Login &raquo;</a></p>
+                <!--<p class="btn btn-primary btn-lg">
+                @*@Html.ActionLink("Login", "Login")*@
+        </p>-->
+            </div>
+       
+    </center>
+</body>

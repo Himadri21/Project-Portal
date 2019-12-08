@@ -10,6 +10,7 @@ using ProjectProgress.Models;
 
 namespace ProjectProgress.Controllers
 {
+    
     public class MarksController : Controller
     {
         private ProjectProgressModel db = new ProjectProgressModel();
@@ -39,7 +40,10 @@ namespace ProjectProgress.Controllers
         // GET: Marks/Create
         public ActionResult Create()
         {
-            ViewBag.StudentUSN = new SelectList(db.Students, "StudentUSN", "StudentUSN");
+            var id = User.Identity.Name;
+            ViewBag.StudentUSN = new SelectList(db.Students.Where(m => m.Teacher.TeacherName == id).ToList(), "StudentUSN", "StudentUSN");
+            //List<Student> students=db.Students.Where(s => s.Teacher.TeacherName == id).ToList();
+            //ViewBag.StudentUSN = new SelectList(students);
             return View();
         }
 

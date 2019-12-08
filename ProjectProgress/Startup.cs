@@ -14,6 +14,7 @@ namespace ProjectProgress
             ConfigureAuth(app);
             createRolesandUsers();
         }
+
         private void createRolesandUsers()
         {
             ApplicationDbContext context = new ApplicationDbContext();
